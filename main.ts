@@ -1,20 +1,9 @@
-input.onButtonPressed(Button.A, function () {
-    music.startMelody(music.builtInMelody(Melodies.Funk), MelodyOptions.Once)
+edubitIrBit.onIrSensorEvent(IrEventType.Rise, function () {
+    basic.showNumber(randint(1, 6))
 })
-music.onEvent(MusicEvent.MelodyEnded, function () {
-    edubitTrafficLightBit.setLed(LedColor.Red, edubitTrafficLightBit.digitalStatePicker(DigitalIoState.Off))
+edubitSoundBit.onEvent(SoundSensorCompareType.MoreThan, 256, function () {
+    basic.showNumber(randint(1, 6))
 })
-input.onButtonPressed(Button.B, function () {
-    music.playTone(262, music.beat(BeatFraction.Whole))
-    music.playTone(330, music.beat(BeatFraction.Whole))
-    music.playTone(262, music.beat(BeatFraction.Whole))
-    music.playTone(330, music.beat(BeatFraction.Whole))
-    music.playTone(330, music.beat(BeatFraction.Whole))
-})
-music.onEvent(MusicEvent.MelodyStarted, function () {
-    edubitTrafficLightBit.setLed(LedColor.Red, edubitTrafficLightBit.digitalStatePicker(DigitalIoState.On))
-})
-music.setVolume(47)
 basic.forever(function () {
 	
 })
